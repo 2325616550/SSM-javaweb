@@ -1,0 +1,10 @@
+service\impl\UserServiceImpl.class
+handler\GlobalExceptionHandler.class
+utils\WebBeanUtils.class
+interceptor\MyInterceptor.class
+filter\MyFilter.class
+controller\UserController.class
+domain\User.class
+service\UserService.class
+dao\UserDao.class
+controller\SeniorController.class

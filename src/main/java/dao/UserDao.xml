@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.UserDao">
+    <select id="isUser" resultType="string">
+            select name from user where name=#{name} and password=#{password}
+    </select>
+
+    <select id="checkName"  resultType="string">
+            select name from user where name=#{name}
+    </select>
+
+    <insert id="addUser" >
+        insert into user(name,email,password,img) values(#{name},#{email},#{password},'static/images/default.jpg')
+    </insert>
+
+    <update id="changePhoto" >
+        update user set img=#{path} where name=#{name}
+    </update>
+
+    <update id="changeEmail" >
+        update user set email=#{email} where name=#{name}
+    </update>
+
+    <update id="changeName" >
+        update user set name=#{newName} where name=#{name}
+    </update>
+    <update id="changePassword" >
+        update user set password=#{password} where name=#{name}
+    </update>
+    <select id="getUser"  resultType="user">
+            select name,email,password,img from user where name=#{name}
+    </select>
+    <select id="getImgPath"  resultType="string">
+            select img from user where name=#{name}
+    </select>
+
+
+</mapper>
